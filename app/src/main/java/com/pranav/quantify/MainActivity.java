@@ -42,6 +42,7 @@ public class MainActivity extends Activity implements ActivityCompat.OnRequestPe
 
 
     /**
+     *
      * the click listener for all drawers buttons
      */
     protected View.OnClickListener mOnClickListener = new View.OnClickListener() {

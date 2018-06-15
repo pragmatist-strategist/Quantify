@@ -7,11 +7,11 @@ import android.service.notification.NotificationListenerService;
 import android.service.notification.StatusBarNotification;
 
 /**
- * this listens to all the activity changes in the app.
- * Service receiving notifications from other apps
+ * this listens to all the activity changes in the phone.
+ * Basically, Service receiving notifications from other apps
  */
 public class NotificationService extends NotificationListenerService {
-    public static final String NOTIFICATION_UPDATE = "com.androidexperiments.utilitywallpaper.NOTIFICATION_UPDATE";
+    public static final String NOTIFICATION_UPDATE = "NOTIFICATION_UPDATE";
     public static boolean permissionsGranted = false;
     public static int numNotifications = 0;
 

@@ -77,7 +77,7 @@ public class Drawer implements SensorEventListener {
 
     }
 
-    //OnDestroy
+    //OnDestroy->unregister the sensorListener Service
     public void destroy() {
         if (mSensorManager == null) {
             return;

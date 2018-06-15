@@ -12,20 +12,16 @@ import android.telephony.ServiceState;
 import android.telephony.SignalStrength;
 import android.telephony.TelephonyManager;
 import android.util.Log;
-
 import com.pranav.quantify.R;
-
 import java.util.List;
-
 
 /**
  * this is basically for the Network connections.
  * Tells me about the connection which the user is having currently and also handle's the network connectivity if it is changed.
  */
+
 public class CellularDrawer extends TriangleFillDrawer {
     private final String TAG = this.getClass().getSimpleName();
-
-
     private boolean firstRead = true;
 
     //check for airplane mode->on state h ya off state h....

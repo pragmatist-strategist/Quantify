@@ -6,13 +6,12 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.graphics.Canvas;
 import android.graphics.Paint;
+import com.pranav.quantify.R;
 import android.os.BatteryManager;
-
-import com.pranav.quantify.drawers.Drawer;
-
 import org.apache.commons.math3.geometry.euclidean.twod.Vector2D;
 
-//Created by pranav
+
+//Created by pranav @ps on 17/4/18
 
 
 public class BatteryDrawer extends Drawer {
@@ -153,7 +152,7 @@ public class BatteryDrawer extends Drawer {
         }
 
         if (redraw) {
-            // Circle color
+            // Circle color change.
             //Transition part of the circle colour .
             _colorTransitionToCharged = animateValue(_colorTransitionToCharged, colorTransitionToCharged, 0.03);
             _colorTransitionToCritical = animateValue(_colorTransitionToCritical, colorTransitionToCritical, 0.03);
@@ -185,6 +184,7 @@ public class BatteryDrawer extends Drawer {
 
         // Background of the screen -> ek rectangle draw karo and fill it with a bold colours .
         paint.setColor(color_battery_background);
+        //draw rect-> left,top,right,bottom.
         c.drawRect(0, 0, c.getWidth(), c.getHeight(), paint);
         //To draw the circle in the exact center.
         int x = c.getWidth() / 2;

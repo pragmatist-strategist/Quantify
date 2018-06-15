@@ -38,6 +38,13 @@ public class MeterWallpaper extends WallpaperService {
     private int mDrawerIndex = -1;
     private long mHideTimestamp = -1;
 
+    /**
+     * The actual implementation of a wallpaper.  A wallpaper service may
+     * have multiple instances running (for example as a real wallpaper
+     * and as a preview), each of which is represented by its own Engine
+     * instance.  You must implement {@link WallpaperService#onCreateEngine()}
+     * to return your concrete Engine implementation.
+     */
     @Override
     public Engine onCreateEngine() {
         WallpaperEngine engine = new WallpaperEngine(this);

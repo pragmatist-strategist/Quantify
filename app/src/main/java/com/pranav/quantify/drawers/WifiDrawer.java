@@ -11,7 +11,7 @@ import android.net.wifi.WifiManager;
 import com.pranav.quantify.R;
 
 
-public class WifiDrawer extends com.pranav.quantify.drawers.TriangleFillDrawer {
+public class WifiDrawer extends TriangleFillDrawer {
     private final String TAG = this.getClass().getSimpleName();
 
     private boolean firstRead = true;

@@ -11,7 +11,7 @@ import com.pranav.quantify.R;
  * This was the first time I introduced such activity in the app. This was something
  * which i saw in many apps and thought of showcasing it for the first time and
  * introduced in this app.
- * there is nothing special about this except that it gives a delay of 3 seconds before the original app is loaded .
+ * there is nothing special about this except that it gives a delay of 3 seconds before the original app is loaded and also the logo is loaded.
  * <p>
  * The first activity that shows the logo and then moves you to the main app.
  */
