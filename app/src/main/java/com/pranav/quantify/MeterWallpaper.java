@@ -71,7 +71,7 @@ public class MeterWallpaper extends WallpaperService {
          * Handle tap commands
          */
         public Bundle onCommand(String action, int x, int y, int z, Bundle extras, boolean resultRequested) {
-            //taps work on Nexus devices but not all, for example Samsung
+
             if (action.equals("android.wallpaper.tap")) {
                 if (mDrawer != null) {
                     mDrawer.tap(x, y);
@@ -81,7 +81,7 @@ public class MeterWallpaper extends WallpaperService {
         }
 
         /**
-         * Draw runloop
+         * Draw run-loop-> in other words display the update on-screen.
          */
         private final Runnable mUpdateDisplay = new Runnable() {
             @Override

@@ -12,7 +12,6 @@ import com.pranav.quantify.R;
 
 
 public class WifiDrawer extends TriangleFillDrawer {
-    private final String TAG = this.getClass().getSimpleName();
 
     private boolean firstRead = true;
 
@@ -70,6 +69,8 @@ public class WifiDrawer extends TriangleFillDrawer {
         return level;
     }
 
+
+
     /**
      * Check the current wifi connection from intent-> connected aor disconnected.
      */
@@ -87,7 +88,6 @@ public class WifiDrawer extends TriangleFillDrawer {
         WifiManager mgr = (WifiManager) context.getApplicationContext().getSystemService(Context.WIFI_SERVICE);
         WifiInfo wifiInfo = mgr.getConnectionInfo();
         String ssid = wifiInfo.getSSID();
-        //for some reason SSID comes wrapped in double-quotes
         if (ssid == null) {
             ssid = "";
         }

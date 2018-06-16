@@ -12,14 +12,14 @@ import com.pranav.quantify.drawers.WifiDrawer;
  */
 public class CombinedWifiCellularDrawer extends Drawer {
 
-    protected com.pranav.quantify.drawers.CellularDrawer mCellularDrawer;
+    protected CellularDrawer mCellularDrawer;
     protected WifiDrawer mWifiDrawer;
     protected Drawer mActiveDrawer;
 
 
     public CombinedWifiCellularDrawer(Context context) {
         super(context);
-        mCellularDrawer = new com.pranav.quantify.drawers.CellularDrawer(context);
+        mCellularDrawer = new CellularDrawer(context);
         mWifiDrawer = new WifiDrawer(context);
         selectActiveDrawer();
     }

@@ -8,7 +8,7 @@ import android.widget.ImageButton;
 
 import com.pranav.quantify.R;
 
-// This activity basically contains the licensing activity of the app.
+// This activity basically contains the licensing activity of the app.All this is done in webView.
 
 /**
  * Activity for opening html files within this projects asset directory

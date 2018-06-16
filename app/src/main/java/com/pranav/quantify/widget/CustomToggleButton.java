@@ -31,6 +31,7 @@ public class CustomToggleButton extends ToggleButton
     }
 
     private void updateBackground(){
+        //is the current option from the list selected? ->handling the cases simultaneously.
         int drawable = isChecked() ? R.drawable.menu_checkbox_selected : R.drawable.menu_checkbox_unselected;
         setBackground(getContext().getResources().getDrawable(drawable));
     }

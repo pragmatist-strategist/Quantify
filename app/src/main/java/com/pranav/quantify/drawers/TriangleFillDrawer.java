@@ -14,7 +14,7 @@ import org.apache.commons.math3.geometry.euclidean.twod.Vector2D;
  * A triangle that is filled up to a set percent.
  * Basically kitna part filled chahiye mujhe in the given triangle.
  */
-public class TriangleFillDrawer extends com.pranav.quantify.drawers.Drawer {
+public class TriangleFillDrawer extends Drawer {
 
     private static final boolean DEBUG_DRAW = false;
 
@@ -48,7 +48,7 @@ public class TriangleFillDrawer extends com.pranav.quantify.drawers.Drawer {
     private Vector2D sideB = new Vector2D(0, 0);
     private Vector2D pivot = new Vector2D(0, 0);
 
-
+//Three colours-> background, foreground and critical->inke liye colour chahiye mujhe.
     public TriangleFillDrawer(Context context, int colorBack, int colorTriBack, int colorTriFore, int colorTriCritical) {
         super(context);
         this.color_background = colorBack;
@@ -65,11 +65,11 @@ public class TriangleFillDrawer extends com.pranav.quantify.drawers.Drawer {
      * @return
      */
 
-    //one of the most difficlt part of the code was to draw this . Stack overflow and a little bit of came to rescue.....
+    //one of the most difficlt part of the code was to draw this . Stack overflow and a little bit of maths came to rescue.....
     //Basically a triangle can be made with the help of Apache math library and some mathematical skills.
     protected Vector2D[] createTriangleVertices(float triangleSize) {
 
-        Vector2D[] p = new Vector2D[3];
+        Vector2D[] p = new Vector2D[3];//3-> x,y & z axis respectively.
 
         double f;
 //From the center of triangle->120degree is subtended by each side of the triangle .
@@ -103,7 +103,16 @@ public class TriangleFillDrawer extends com.pranav.quantify.drawers.Drawer {
         p[0] = p[2].add(p[0].subtract(p[2]).scalarMultiply(height));
         p[1] = p[2].add(p[1].subtract(p[2]).scalarMultiply(height));
 
-
+        /**
+         * Set the beginning of the next contour relative to the last point on the
+         * previous contour. If there is no previous contour, this is treated the
+         * same as moveTo().
+         *
+         * @param dx The amount to add to the x-coordinate of the end of the
+         *           previous contour, to specify the start of a new contour
+         * @param dy The amount to add to the y-coordinate of the end of the
+         *           previous contour, to specify the start of a new contour
+         */
         path.moveTo((float) p[0].getX() + x, (float) p[0].getY() + y);
         path.lineTo((float) p[1].getX() + x, (float) p[1].getY() + y);
         path.lineTo((float) p[2].getX() + x, (float) p[2].getY() + y);
@@ -161,11 +170,6 @@ public class TriangleFillDrawer extends com.pranav.quantify.drawers.Drawer {
 
             normal = _pos.normalize().scalarMultiply(-100);
             Vector2D oth = new Vector2D(-normal.getY(), normal.getX());
-
-/*          ----
-            double abSplit = intersection.distance(a) / a.distance(b);
-            if(abSplit > 0.5) abSplit = intersection.distance(b) / a.distance(b);;
-            abSplit *= 2.0;*/
 
             sideA = a.add(b.subtract(a).scalarMultiply(percentFilled));
             sideB = a.add(c.subtract(a).scalarMultiply(percentFilled));

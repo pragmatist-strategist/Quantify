@@ -212,7 +212,7 @@ public class Drawer implements SensorEventListener {
             if (rotation == Surface.ROTATION_180) {
                 SensorManager.remapCoordinateSystem(mR, SensorManager.AXIS_MINUS_X, SensorManager.AXIS_MINUS_Y, mRremap);
             }
-//finally get my final orientation
+//finally get my current orientation.
             SensorManager.getOrientation(mRremap, mOrientation);
         }
     }

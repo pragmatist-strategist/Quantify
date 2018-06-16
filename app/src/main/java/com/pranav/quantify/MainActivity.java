@@ -173,7 +173,7 @@ public class MainActivity extends Activity implements ActivityCompat.OnRequestPe
 
     //check if the required permissions are granted by the user or not:
     //For wifi->check location access by the user.
-    //similarly check if the user ha granted permission to allow the app to read notifications or not.
+    //similarly check if the user has granted permission to allow the app to read notifications or not.
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
@@ -266,7 +266,7 @@ public class MainActivity extends Activity implements ActivityCompat.OnRequestPe
     private void moveToNotificationListenerSettings() {
         Intent intent = null;
         //This is an ever true statement. It will always remain true in whatever case. Basically used if someone deliberately wants to have a look into this app.
-        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP_MR1) {
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP) {
             intent = new Intent(Settings.ACTION_NOTIFICATION_LISTENER_SETTINGS);
             startActivity(intent);
         }
